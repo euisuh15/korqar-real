@@ -137,6 +137,25 @@ class Signin_submit {
             )
         );
 
+        // 로그인 보너스 포인트 지급
+        $last_bonus_date = date ('Y-m-d', strtotime($sql->fetch('mb_lately')));
+        $current_date = date('Y-m-d');
+
+        // Debugging
+        // echo "Last Bonus Date: " . $last_bonus_date . "<br>";
+        // echo "Current Date: " . $current_date . "<br>";
+
+        if (!$last_bonus_date || $last_bonus_date != $current_date) {
+            Func::set_mbpoint(
+                array(
+                    'mb_idx' => $mbinfo['idx'],
+                    'mode' => 'in',
+                    'point' => 100,
+                    'msg' => $current_date . ' 출석 포인트'
+                )
+            );
+        }
+
         // 아이디 저장을 체크한 경우 아이디를 쿠키에 저장
         if ($req['save'] == 'checked') {
             setcookie('MB_SAVE_ID', $mbinfo['id'], time() + SET_COOKIE_LIFE, '/');

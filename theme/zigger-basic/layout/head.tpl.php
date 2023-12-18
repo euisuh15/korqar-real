@@ -61,6 +61,12 @@
         </ul>
 
         <ul id="util_menu">
+            <li class="<?php echo ($this->layout->point_total_count() != 0) ? 'new' : ''; ?>">
+                <a href="<?php echo $this->layout->site_dir(); ?>/member/point">
+                    <div class="sound_only_ele">새로운 포인트 보기</div>
+                    <i class="fas fa-coins"></i><strong><?php echo $this->layout->point_total_count(); ?></strong>
+                </a>
+            </li>   
             <li class="<?php echo ($this->layout->message_new_count() != 0) ? 'new' : ''; ?>">
                 <a href="<?php echo $this->layout->site_dir(); ?>/message">
                     <div class="sound_only_ele">새로운 메시지 보기</div>

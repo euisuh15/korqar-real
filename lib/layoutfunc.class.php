@@ -45,6 +45,14 @@ class Layout {
     }
 
     // message module 새로운 알림 개수 반환
+    public function point_total_count()
+    {
+        global $MB;
+
+        return isset($MB['point']) ? Func::number($MB['point']) : 0;
+    }
+
+    // message module 새로운 알림 개수 반환
     public function message_new_count()
     {
         $Message_Library = new Message_Library();
