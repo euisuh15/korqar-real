@@ -21,10 +21,10 @@
         <?php } ?>
 
         <fieldset class="inp-wrap">
-            <label for="id">User ID <p class="sound_only_ele"><strong>필수 입력</strong></p></label>
+            <label for="id">아이디 <p class="sound_only_ele"><strong>필수 입력</strong></p></label>
             <input type="text" name="id" id="id" title="User ID" class="inp" value="<?php echo $id_val; ?>" required />
 
-            <label for="pwd">Password <p class="sound_only_ele"><strong>필수 입력</strong></p></label>
+            <label for="pwd">비밀번호 <p class="sound_only_ele"><strong>필수 입력</strong></p></label>
             <input type="password" name="pwd" id="pwd" title="Password" class="inp" required />
 
             <div class="tar">
