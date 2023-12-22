@@ -231,6 +231,9 @@
     .ctit2:before {height: 14px;margin-top: -7px;width: 2px;}
     .ctxt1 {font-size: 13px;line-height: 20px;margin-bottom: 15px;}
 
+    .mt0 {margin-top: 0 !important;}
+    .mb0 {margin-bottom: 0 !important;}
+
     /* Blocked */
     #blocked {margin: 40px 20px;width: auto;}
 

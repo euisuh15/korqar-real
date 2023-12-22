@@ -10,21 +10,22 @@ class Contents extends \controller\Make_Controller {
     {
         $this->layout()->category_key(2);
         $this->layout()->head();
-        $this->layout()->view();
+        // $this->layout()->view();
+        $this->layout()->view(PH_THEME_PATH.'/html/sub/description.tpl.php'); // view(template) 파일과 결합하는 경우 view 경로 지정
         $this->layout()->foot();
     }
 
     public function make()
     {
-        $this->module();
+        // $this->module();
     }
 
-    public function module()
-    {
-        $module = new \Module\Contents\Make_Controller();
-        $module->set('key', 'sample');
-        $module->run();
-    }
+    // public function module()
+    // {
+    //     $module = new \Module\Contents\Make_Controller();
+    //     $module->set('key', 'sample');
+    //     $module->run();
+    // }
 
 }
 
