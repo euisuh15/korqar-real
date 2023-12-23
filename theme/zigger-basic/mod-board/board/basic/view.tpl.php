@@ -29,7 +29,7 @@
                 <?php } ?>
                 <?php echo $print_writer; ?>
             </li>
-            <li><strong>작성일</strong><?php echo $view['datetime']; ?></li>
+            <li><strong>작성일</strong><?php echo $view['datetime'].' '.$view['edited']; ?></li>
             <li><strong>조회</strong><?php echo $view['view']; ?></li>
         </ul>
     </div>

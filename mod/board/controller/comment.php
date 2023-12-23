@@ -191,6 +191,7 @@ class Load extends \Controller\Make_Controller {
                     $arr[0]['profileimg'] = print_profileimg($arr);
                     $arr[0]['writer'] = print_writer($arr);
                     $arr[0]['parent_writer'] = print_parent_writer($arr);
+                    $arr['edited'] = ($arr['edited'] == 'Y') ? '(수정됨)' : '';
 
                     $print_arr[] = $arr;
 
@@ -339,13 +340,23 @@ class Comment_submit {
         $sql->query(
             "
             insert into {$sql->table("mod:board_cmt_".$board_id)}
-            (ln, rn, bo_idx, mb_idx, writer, comment, ip, regdate, cmt_1, cmt_2, cmt_3, cmt_4, cmt_5, cmt_6, cmt_7, cmt_8, cmt_9, cmt_10)
+            (ln, rn, bo_idx, mb_idx, writer, comment, ip, regdate, cmt_1, cmt_2, cmt_3, cmt_4, cmt_5, cmt_6, cmt_7, cmt_8, cmt_9, cmt_10, edited)
             values
-            (:col1, :col2, :col3, :col4, :col5, :col6, '{$_SERVER['REMOTE_ADDR']}', now(), :col7, :col8, :col9, :col10, :col11, :col12, :col13, :col14, :col15, :col16)
+            (:col1, :col2, :col3, :col4, :col5, :col6, '{$_SERVER['REMOTE_ADDR']}', now(), :col7, :col8, :col9, :col10, :col11, :col12, :col13, :col14, :col15, :col16, 'N')
             ",
             array(
                 $ln_arr['ln_max'], 0, $req['read'], $mb_idx, $writer, $req['comment'], $req['cmt_1'], $req['cmt_2'],
                 $req['cmt_3'], $req['cmt_4'], $req['cmt_5'], $req['cmt_6'], $req['cmt_7'], $req['cmt_8'], $req['cmt_9'], $req['cmt_10']
+            )
+        );
+
+        // 댓글 포인트 차증
+        Func::set_mbpoint(
+            array(
+                'mb_idx' => $mb_idx,
+                'mode' => 'in',
+                'point' => 1,
+                'msg' => '댓글 작성 ('.$boardconf['title'].')'
             )
         );
 
@@ -455,9 +466,9 @@ class Comment_submit {
         $sql->query(
             "
             insert into {$sql->table("mod:board_cmt_".$board_id)}
-            (parent_mb_idx, parent_writer, ln, rn, bo_idx, mb_idx, writer, comment, ip, regdate, cmt_1, cmt_2, cmt_3, cmt_4, cmt_5, cmt_6, cmt_7, cmt_8, cmt_9, cmt_10)
+            (parent_mb_idx, parent_writer, ln, rn, bo_idx, mb_idx, writer, comment, ip, regdate, cmt_1, cmt_2, cmt_3, cmt_4, cmt_5, cmt_6, cmt_7, cmt_8, cmt_9, cmt_10, edited)
             values
-            (:col1, :col2, :col3, :col4, :col5, :col6, :col7, :col8, '{$_SERVER['REMOTE_ADDR']}', now(), :col9, :col10, :col11, :col12, :col13, :col14, :col15, :col16, :col17, :col18)
+            (:col1, :col2, :col3, :col4, :col5, :col6, :col7, :col8, '{$_SERVER['REMOTE_ADDR']}', now(), :col9, :col10, :col11, :col12, :col13, :col14, :col15, :col16, :col17, :col18, 'N')
             ",
             array(
                 $parent_mb_idx, $parent_writer, $ln_isrt, $rn_next, $req['read'], $mb_idx, $writer, $req['re_comment'], $req['cmt_1'], $req['cmt_2'], $req['cmt_3'], $req['cmt_4'], $req['cmt_5'],
@@ -533,7 +544,7 @@ class Comment_submit {
         $sql->query(
             "
             update {$sql->table("mod:board_cmt_".$board_id)}
-            set writer=:col2, comment=:col3, ip='{$_SERVER['REMOTE_ADDR']}', cmt_1=:col4, cmt_2=:col5, cmt_3=:col6, cmt_4=:col7, cmt_5=:col8, cmt_6=:col9, cmt_7=:col10, cmt_8=:col11, cmt_9=:col12, cmt_10=:col13
+            set writer=:col2, comment=:col3, ip='{$_SERVER['REMOTE_ADDR']}', cmt_1=:col4, cmt_2=:col5, cmt_3=:col6, cmt_4=:col7, cmt_5=:col8, cmt_6=:col9, cmt_7=:col10, cmt_8=:col11, cmt_9=:col12, cmt_10=:col13, edited='Y'
             where idx=:col1
             ",
             array(
@@ -635,6 +646,18 @@ class Comment_submit {
                 $req['cidx']
             )
         );
+
+        // 댓글 포인트 차감
+        if (isset($MB['idx'])) {
+            Func::set_mbpoint(
+                array(
+                    'mb_idx' => $MB['idx'],
+                    'mode' => 'out',
+                    'point' => 1,
+                    'msg' => '댓글 삭제 ('.$boardconf['title'].')'
+                )
+            );
+        }
 
         // return
         Valid::set(

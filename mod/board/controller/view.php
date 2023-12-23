@@ -496,6 +496,7 @@ class View extends \Controller\Make_Controller {
             $arr['datetime'] = Func::datetime($arr['regdate']);
             $arr['likes_cnt'] = Func::number($arr['likes_cnt']);
             $arr['unlikes_cnt'] = Func::number($arr['unlikes_cnt']);
+            $arr['edited'] = ($arr['edited'] == 'Y') ? '(수정됨)' : '';
 
             $view = array();
 

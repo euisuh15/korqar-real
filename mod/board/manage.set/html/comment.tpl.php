@@ -44,7 +44,7 @@
 
                     <p><?php echo $list[0]['writer']; ?></p>
 				</span>
-				<span class="date"><?php echo $list['datetime']; ?></span>
+				<span class="date"><?php echo $list['datetime'].' '.$list['edited']; ?></span>
 			</div>
 			<div class="comment">
 				<?php if ($list[0]['parent_writer']) echo $list[0]['parent_writer']; ?>
