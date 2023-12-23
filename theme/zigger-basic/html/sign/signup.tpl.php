@@ -20,7 +20,7 @@
 
         <fieldset class="inp-wrap">
 
-            <label for="id">User ID <p class="sound_only_ele"><strong>필수 입력</strong></p></label>
+            <label for="id">아이디 <p class="sound_only_ele"><strong>필수 입력</strong></p></label>
             <input type="text" name="id" id="id" title="User ID" class="inp" data-validt-action="/sign/Signup-check-id" data-validt-event="keyup" data-validt-group="id" required />
             <span class="validt" data-validt-group="id"></span>
             <ul class="tbltxt">
@@ -28,24 +28,24 @@
                 <li>최소 5자~최대 30자 까지 입력</li>
             </ul>
 
-            <label for="email">E-mail <p class="sound_only_ele">회원 E-mail<strong>필수 입력</strong></p></label>
+            <label for="email">이메일 <p class="sound_only_ele">회원 E-mail<strong>필수 입력</strong></p></label>
             <input type="text" name="email" id="email" title="E-mail" class="inp" data-validt-action="/sign/Signup-check-email" data-validt-event="keyup" data-validt-group="email" required />
             <span class="validt" data-validt-group="email"></span>
             <ul class="tbltxt">
                 <li>회원 로그인 정보 분실시 입력한 이메일로 조회 가능</li>
             </ul>
 
-            <label for="pwd">Password <p class="sound_only_ele"><strong>필수 입력</strong></p></label>
+            <label for="pwd">비밀번호 <p class="sound_only_ele"><strong>필수 입력</strong></p></label>
             <input type="password" name="pwd" id="pwd" title="Password" class="inp mb5" data-validt-action="/sign/Signup-check-password" data-validt-event="keyup" data-validt-group="pwd" required />
             <span class="validt" data-validt-group="pwd"></span>
             <ul class="tbltxt">
                 <li>최소 5자~최대 50자 까지 입력</li>
             </ul>
 
-            <label for="pwd2">Password 확인 <p class="sound_only_ele"><strong>필수 입력</strong></p></label>
+            <label for="pwd2">비밀번호 확인 <p class="sound_only_ele"><strong>필수 입력</strong></p></label>
             <input type="password" name="pwd2" id="pwd2" title="Password 확인" class="inp" required />
 
-            <label for="name">회원 이름</label>
+            <label for="name">닉네임</label>
             <input type="text" name="name" id="name" title="회원 이름" class="inp" required />
 
             <?php if ($siteconf['use_mb_gender'] != 'N') { ?>

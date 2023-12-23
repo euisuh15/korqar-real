@@ -25,9 +25,9 @@
 
             <?php } else { ?>
             <li><a href="<?php echo $this->layout->site_dir(); ?>/sign/signout">로그아웃</a></li>
-            <li><a href="<?php echo $this->layout->site_dir(); ?>/member">Mypage</a></li>
+            <li><a href="<?php echo $this->layout->site_dir(); ?>/member">마이페이지</a></li>
             <?php if ($MB['level'] == 1) { ?>
-            <li><a href="<?php echo $this->layout->site_dir(); ?>/manage/">Manage</a></li>
+            <li><a href="<?php echo $this->layout->site_dir(); ?>/manage/">관리게시판</a></li>
             <?php } ?>
             <?php } ?>
         </ul>
@@ -59,7 +59,7 @@
             </li>
             <?php } ?>
         </ul>
-
+        <?php if (IS_MEMBER) { ?>
         <ul id="util_menu">
             <li class="<?php echo ($this->layout->point_total_count() != 0) ? 'new' : ''; ?>">
                 <a href="<?php echo $this->layout->site_dir(); ?>/member/point">
@@ -80,6 +80,7 @@
                 </a>
             </li>
         </ul>
+        <?php }?>
     </nav>
 
     <div href="#" id="slide-btn">
@@ -97,10 +98,10 @@
             <li><a href="<?php echo $this->layout->signin_href(); ?>">회원로그인</a></li>
             <li><a href="<?php echo $this->layout->site_dir(); ?>/sign/signup">회원가입</a></li>
             <?php } else { ?>
-            <li><a href="<?php echo $this->layout->site_dir(); ?>/message">Message <em><?php echo $this->layout->message_new_count(); ?></em></a></li>
+            <li><a href="<?php echo $this->layout->site_dir(); ?>/message">메세지 <em><?php echo $this->layout->message_new_count(); ?></em></a></li>
             <li><a href="<?php echo $this->layout->site_dir(); ?>/alarm">Alarm <em><?php echo $this->layout->alarm_new_count(); ?></em></a></li>
             <li><a href="<?php echo $this->layout->site_dir(); ?>/sign/signout">로그아웃</a></li>
-            <li><a href="<?php echo $this->layout->site_dir(); ?>/member">Mypage</a></li>
+            <li><a href="<?php echo $this->layout->site_dir(); ?>/member">마이페이지</a></li>
             <?php } ?>
         </ul>
 
