@@ -83,7 +83,7 @@ valid = {
 			zigalert(inp_tit + ' : 입력해 주세요.');
 
 		} else if ($.trim(opt.err_code) === 'NOTMATCH_CAPTCHA') {
-			zigalert('Captcha(스팸방지)가 올바르지 않습니다.');
+			zigalert('스팸방지가 올바르지 않습니다.');
 
 		} else if ($.trim(opt.msg) !== '') {
             if (typeof inp_tit != 'undefined' && typeof inp_tit != 'null') {
