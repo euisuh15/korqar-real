@@ -10,6 +10,7 @@ php_flag html_errors On
 php_flag log_errors On
 php_value error_reporting -1
 php_value error_log ./data/php-error-logs.log
+php_value date.timezone 'Asia/Qatar'
 
 RewriteEngine On
 

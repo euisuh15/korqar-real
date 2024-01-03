@@ -101,7 +101,7 @@ class Pdosql {
     public function query($query, $param = [], $dspError = true)
     {
         try {
-
+            $this->pdo->exec("SET time_zone = '+3:00'");
             $qryString = $query;
 
             $this->stmt = $this->pdo->prepare($query);

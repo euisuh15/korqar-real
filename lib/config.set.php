@@ -97,6 +97,7 @@ define('SET_INTDICT_FILE', preg_replace("/\s+/", "", 'html, htm, shtm, phtml, ph
 define('SET_IMGTYPE', preg_replace("/\s+/", "", 'gif, jpg, jpeg, bmp, png')); // 사용 가능한 모든 이미지 종류
 define('SET_MOBILE_DEVICE', preg_replace("/\s+/", "", 'iphone, lgtelecom, skt, mobile, samsung, nokia, blackberry, android, sony, phone')); // 모바일 디바이스 종류
 define('SET_CACHE_HASH', '?cache='.md5(date('Ymd'))); // CSS, JS 갱신을 위한 캐시 값 설정 (매일 갱신)
+// define('SET_CACHE_HASH', '?cache='.md5(date('Ymds'))); // 디버깅용 CSS, JS 갱신을 위한 캐시 값 설정 (매초 갱신)
 define('SET_GRECAPTCHA_URL', array('https://www.google.com/recaptcha/api.js', 'https://www.google.com/recaptcha/api/siteverify?secret=')); // google recaptcha rest api url
 define('SET_KPOSTCODE_URL', 'https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js'); // kakao postcode rest api url
 
@@ -105,6 +106,7 @@ ini_set('session.gc_probability', 1);
 ini_set('session.gc_divisor', 100);
 ini_set("session.gc_maxlifetime", SET_SESS_LIFE);
 ini_set('display_errors', 1);
+ini_set('date.timezone', 'Asia/Qatar');
 
 ////////////////////////////////////////////////////
 //
