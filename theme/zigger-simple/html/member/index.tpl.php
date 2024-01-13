@@ -1,5 +1,5 @@
 <div id="sub-tit">
-    <h2><?php echo $MB['name']; ?>님의 Mypage</h2>
+    <h2><?php echo $MB['name']; ?>님의 마이페이지</h2>
 </div>
 
 <ul class="mypagebox">
@@ -11,21 +11,21 @@
         <a href="<?php echo PH_DIR; ?>/member/info" class="btn2">회원정보 변경</a>
     </li>
     <li>
-        <h5>보유 Point</h5>
+        <h5>보유 포인트</h5>
         <span class="txt">
-            <strong><?php echo $point_total_count; ?></strong> Point
+            <strong><?php echo $point_total_count; ?></strong> 포인트
         </span>
         <a href="<?php echo PH_DIR; ?>/member/point" class="btn2">포인트 내역 확인 </a>
     </li>
     <li>
-        <h5>받은 Message</h5>
+        <h5>받은 메시지</h5>
         <span class="txt">
             <strong><?php echo $message_new_count; ?></strong> 개의 새로운 메시지
         </span>
         <a href="<?php echo PH_DIR; ?>/message" class="btn2">모든 메시지 확인</a>
     </li>
     <li>
-        <h5>받은 Alarm</h5>
+        <h5>받은 알림</h5>
         <span class="txt">
             <strong><?php echo $alarm_new_count; ?></strong> 개의 새로운 알림
         </span>
