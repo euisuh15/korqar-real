@@ -1,6 +1,13 @@
 <?php
 namespace Make\Library;
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\SMTP;
+
+require ('/home/u161709331/domains/korqar.com/public_html/vendor/phpmailer/phpmailer/src/PHPMailer.php');
+require ('/home/u161709331/domains/korqar.com/public_html/vendor/phpmailer/phpmailer/src/SMTP.php');
+
 class Mail extends \Make\Database\Pdosql {
 
     public $tpl = 'default';
@@ -24,7 +31,7 @@ class Mail extends \Make\Database\Pdosql {
     protected $mailHeaderArray = array();
     protected $mailAttachArray = array();
 
-    // mail init
+// mail init
     private function init()
     {
         $this->tpl = 'default';
@@ -248,8 +255,8 @@ class Mail extends \Make\Database\Pdosql {
     {
         global $CONF;
 
-        $this->smtp_id = base64_encode($CONF['smtp_id']);
-        $this->smtp_pwd = base64_encode($CONF['smtp_pwd']);
+        $this->smtp_id = $CONF['smtp_id'];
+        $this->smtp_pwd = $CONF['smtp_pwd'];
         $this->smtp_server = $CONF['smtp_server'];
         $this->smtp_port = $CONF['smtp_port'];
     }
@@ -283,48 +290,43 @@ class Mail extends \Make\Database\Pdosql {
     {
         $successCount = 0;
         $this->getSmtpServerInfo();
-        $this->addHeader('Subject', $this->setSubject());
+        $mail = new PHPMailer(true);
+    
+        // Set SMTP server settings
+        $mail->isSMTP();
+        $mail->SMTPSecure = 'ssl';
+        $mail->Host = $this->smtp_server;  // Set your SMTP server address
+        $mail->Port = $this->smtp_port;  // Set the SMTP server port (usually 587 for TLS)
+        $mail->SMTPAuth = true;
+        $mail->isHTML(true);
+        $mail->Username = $this->smtp_id;  // Your SMTP username
+        $mail->Password = $this->smtp_pwd;  // Your SMTP password
 
-        // socket 연결
-        if (strstr($this->smtp_server, 'ssl://') || strstr($this->smtp_server, 'tls://')) {
-            $context = stream_context_create();
-            $result = stream_context_set_option($context, 'ssl', 'verify_peer', false);
-            $result = stream_context_set_option($context, 'ssl', 'verify_host', false);
-            $this->smtp_sock = stream_socket_client($this->smtp_server.':'.$this->smtp_port, $errno, $errstr, 10, STREAM_CLIENT_CONNECT, $context) or die (ERR_MSG_7);
-
-        } else {
-            $this->smtp_sock = fsockopen($this->smtp_server, $this->smtp_port) or die (ERR_MSG_7);
-        }
-
-        if ($this->smtp_sock) {
-            $this->putSocket('HELO '.$this->smtp_server);
-
-            if ($this->smtp_id) {
-                $this->putSocket('AUTH LOGIN');
-                $this->putSocket($this->smtp_id);
-                $this->putSocket($this->smtp_pwd);
-            }
-        }
-
-        // socket 발송
+        // Set email sender
+        $mail->setFrom('admin@korqar.com', '=?UTF-8?B?' . base64_encode('카타르 한인 커뮤니티') . '?=');
+        
+        // Loop through recipients and send emails
         foreach ($this->mailToArray as $email => $name) {
-
             $html = $this->makeHtmlBody($email);
 
-            $to = ($name) ? $this->base64Contents($name).' <'.$email.'>' : $email;
-
-            $this->addHeader('To', $to);
-
-            $contents = $this->makeHeaders()."\r\n".$html;
-
-            $this->putSocket('MAIL From:'.$this->mailFromArray['email']);
-            $this->putSocket('RCPT To:'.$email);
-            $this->putSocket('DATA');
-            $this->putSocket($contents);
-            $this->putSocket(".\r\n");
+            // Add a recipient
+            $mail->addAddress($email, '=?UTF-8?B?' . base64_encode($name). '?=');
+    
+            // Set email subject and content
+            $mail->Subject = $this->setSubject();
+            $mail->Body = $html;
+    
+            // Send the email
+            if ($mail->send()) {
+                $successCount++;
+            } else {
+                // Handle the error
+                error_log('Error sending email to ' . $email . ': ' . $mail->ErrorInfo);
+            }
+    
+            // Clear recipients for the next iteration
+            $mail->clearAddresses();
         }
-
-        $this->putSocket('QUIT');
         
         return $successCount;
     }
