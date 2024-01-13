@@ -1,5 +1,13 @@
 <div id="sub-tit">
-    <h2><?php echo $MB['name']; ?>님의 메시지함</h2>
+    <?php if ($MB['profileimg']) { ?>
+        <h2>
+            <img src="/data/memberprofile/<?php echo $MB['profileimg']; ?>"
+                style="border-radius: 50%; width: 40px; height: 40px; display: inline-block;">
+            <?php echo $MB['name']; ?>님의 메시지함
+        </h2>
+    <?php } else { ?>
+        <h2><?php echo $MB['name']; ?>님의 메시지함</h2>
+    <?php } ?>
 </div>
 
 <?php $this->message_tab(); ?>
