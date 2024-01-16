@@ -294,6 +294,7 @@ class Mail extends \Make\Database\Pdosql {
     
         // Set SMTP server settings
         $mail->isSMTP();
+        $mail->Charset = 'UTF-8';
         $mail->SMTPSecure = 'ssl';
         $mail->Host = $this->smtp_server;  // Set your SMTP server address
         $mail->Port = $this->smtp_port;  // Set the SMTP server port (usually 587 for TLS)
@@ -303,7 +304,7 @@ class Mail extends \Make\Database\Pdosql {
         $mail->Password = $this->smtp_pwd;  // Your SMTP password
 
         // Set email sender
-        $mail->setFrom('admin@korqar.com', '=?UTF-8?B?' . base64_encode('카타르 한인 커뮤니티') . '?=');
+        $mail->setFrom('admin@korqar.com', '=?UTF-8?B?' . base64_encode('KORQAR | 카타르 한인 커뮤니티') . '?=');
         
         // Loop through recipients and send emails
         foreach ($this->mailToArray as $email => $name) {
