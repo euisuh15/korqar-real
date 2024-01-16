@@ -50,6 +50,17 @@
                 <p>커뮤니티가 더 나은 방향으로 나아갈 수 있도록 지속적으로 노력하며, 항상 여러분의 소중한 의견과 지원을 환영합니다.</p>
             </div>
         </div>
+
+        <!-- <h2 class="sub-tit">고독한 익명</h2> -->
+        <div class="inner">
+            <div class="gui-warbox">
+                <img src="/data/manage/admin_mzcomm.png" alt="Admin 4" width="200" height="200">
+                <br><br><br>
+                <strong>나르시시스틱 마케터 <i>@mzcomm</i></strong>
+                <p>안녕하세요. KORQAR에서 소통을 담당하고 있는 나르시시스틱 마케터  입니다. </p>
+                <p>KORQAR 커뮤니티의 사용성 향상과 함께 다양한 디지털 전략을 펼쳐, 커뮤니티 멤버들과의 연결을 촉진시키고 있습니다. 여러분의 피드백은 사랑입니다.</p>
+            </div>
+        </div>
     
     </div>
 
