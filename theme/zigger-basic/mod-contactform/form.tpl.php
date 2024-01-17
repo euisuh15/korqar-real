@@ -17,7 +17,7 @@
                     ?>
 
                     <tr>
-                        <th>회원 이름</th>
+                        <th>회원 닉네임</th>
                         <td>
                             <input type="hidden" name="name" value="<?php echo $MB['name']; ?>" />
                             <?php echo $MB['name']; ?>
@@ -50,7 +50,7 @@
                             </ul>
                         </td>
                     </tr>
-                    <tr>
+                    <!-- <tr>
                         <th>연락처</th>
                         <td>
                             <label for="phone" class="sound_only_ele">연락처 - 하이픈(-) 없이 입력 하세요. <strong>필수 입력</strong></label>
@@ -59,7 +59,7 @@
                                 <li>하이픈(-) 없이 입력 하세요.</li>
                             </ul>
                         </td>
-                    </tr>
+                    </tr> -->
                     <tr>
                         <th>문의 내용</th>
                         <td>

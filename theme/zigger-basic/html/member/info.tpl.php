@@ -142,9 +142,9 @@
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row">이름</th>
+                        <th scope="row">닉네임</th>
                         <td>
-                            <label for="name" class="sound_only_ele">이름 <strong>필수 입력</strong></label>
+                            <label for="name" class="sound_only_ele">닉네임 <strong>필수 입력</strong></label>
                             <input type="text" name="name" title="이름" class="inp w50" value="<?php echo $mb['mb_name']; ?>" required />
                         </td>
                     </tr>

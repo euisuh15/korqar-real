@@ -69,7 +69,7 @@ class Contactus_submit {
         Valid::get(
             array(
                 'input' => 'phone',
-                'value' => $req['phone'],
+                'value' => '00000000',
                 'check' => array(
                     'defined' => 'phone'
                 )
