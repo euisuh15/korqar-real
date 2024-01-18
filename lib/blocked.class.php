@@ -54,10 +54,10 @@ class Blocked {
             where (ip=:col1 or ip=:col2 or ip=:col3 or ip=:col4) or (mb_idx=:col5 and mb_id=:col6)
             ",
             array(
-                self::$ip_qry[0],
-                self::$ip_qry[1],
-                self::$ip_qry[2],
-                self::$ip_qry[3],
+                self::$ip_qry[0] ?? "",
+                self::$ip_qry[1] ?? "",
+                self::$ip_qry[2] ?? "",
+                self::$ip_qry[3] ?? "",
                 $MB['idx'],
                 $MB['id']
             )
