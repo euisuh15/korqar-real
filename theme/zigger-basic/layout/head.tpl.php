@@ -194,10 +194,10 @@
 
     <div id="content">
 
-        <?php if ($NAVIGATOR) { ?>
+        <!-- <?php if ($NAVIGATOR) { ?>
         <div id="sub-tit">
             <h2><?php echo $NAVIGATOR[count($NAVIGATOR)-1]['title']; ?></h2>
         </div>
-        <?php } ?>
+        <?php } ?> -->
 
 <?php } ?>
