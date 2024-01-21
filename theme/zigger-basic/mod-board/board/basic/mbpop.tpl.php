@@ -39,6 +39,10 @@
 				<th>최근로그인</th>
 				<td><?php echo $mbinfo['mb_lately']; ?></td>
 			</tr>
+			<tr>
+				<th>포인트</th>
+				<td><?php echo $mbinfo['mb_point']; ?></td>
+			</tr>
 		</tbody>
 	</table>
 	<?php } ?>
