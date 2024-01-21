@@ -2,7 +2,7 @@
     <?php if ($MB['profileimg']) { ?>
         <h2>
             <img src="/data/memberprofile/<?php echo $MB['profileimg']; ?>"
-                style="border-radius: 50%; width: 40px; height: 40px; display: inline-block;">
+                style="border-radius: 50%; width: 40px; height: 40px; display: inline-block; vertical-align: middle;">
             <?php echo $MB['name']; ?>님의 포인트 내역
         </h2>
     <?php } else { ?>
