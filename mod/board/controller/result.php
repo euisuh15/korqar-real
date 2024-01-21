@@ -181,6 +181,14 @@ class Result extends \Controller\Make_Controller {
             if ($MB['level'] <= $boardconf['write_level']) {
                 return '<a href="'.$thisuri.Func::get_param_combine('mode=write&category='.urlencode($category).'&page='.$page.'&where='.$where.'&keyword='.urlencode($keyword), '?').'" class="btn1">글 작성</a>';
             }
+            else {
+                if (!IS_MEMBER) {
+                    return '<a href="/sign/signin" class="btn1">글 작성</a>';
+                }
+                else {
+                    return '<a href="/" class="btn1">글 작성</a>';
+                }
+            }
         }
 
         // 게시물 번호
