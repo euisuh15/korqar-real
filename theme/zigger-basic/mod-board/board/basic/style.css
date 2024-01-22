@@ -183,7 +183,7 @@
 
 #ctrpop-bg {background: rgba(0,0,0,0.2);display: none;height: 100%;left: 0;position: fixed;top: 0;width: 100%;z-index: 300;}
 
-#mbpop {background: #fff;box-shadow: 0 0 20px rgba(0,0,0,0.03);box-sizing: border-box;display: none;height: 380px;left: 50%;margin-left: -200px;margin-top: -190px;overflow: hidden;padding-top: 60px;position: fixed;top: 50%;width: 400px;z-index: 301;}
+#mbpop {background: #fff;box-shadow: 0 0 20px rgba(0,0,0,0.03);box-sizing: border-box;display: none;height: 400px;left: 50%;margin-left: -200px;margin-top: -190px;overflow: hidden;padding-top: 60px;position: fixed;top: 50%;width: 400px;z-index: 301;}
 #mbpop .tit {background: var(--seasalt);border-bottom: 1px solid #eee;box-sizing: border-box;left: auto;line-height: 60px;padding: 0 25px;position: absolute;top: 0;width: 100%;z-index: 302;}
 #mbpop .tit h2 {color: #000;font-size: 16px;font-weight: bold;letter-spacing: -0.05em;}
 #mbpop .tit .close {color: #333;display: block;font-size: 16px;height: 60px;line-height: 60px;position: absolute;right: 0;text-align: center;text-decoration: none;top: 0;width: 60px;}

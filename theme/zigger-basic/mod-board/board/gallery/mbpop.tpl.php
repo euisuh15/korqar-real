@@ -53,6 +53,7 @@
 	<?php } ?>
 
     <div class="mb-btn mt10">
+		<p>&nbsp;</p>
     	<a href="<?php echo $get_link; ?>" class="btn2" id="move-btn"><i class="fa fa-search"></i> 작성글 보기</a>
         <?php if ($is_mbinfo_show) { ?>
     	<a href="#" class="btn2" data-message-send="<?php echo $mbinfo['mb_id']; ?>" data-message-send-reply="">메시지 발송</a>
