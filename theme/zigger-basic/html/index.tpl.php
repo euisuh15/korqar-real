@@ -5,7 +5,7 @@ $this->popup_fetch();
 
 <div class="vis">
     <div class="in">
-        <i class="fa fa-paint-brush"></i>
+        <!-- <i class="fa fa-paint-brush"></i> -->
         <h3>카타르 한인 커뮤니티에<br />오신 것을 진심으로 환영합니다.</h3>
         <p>
         KORQAR은 카타르에서의 다양한 경험을 공유하며 소통하는 공동체입니다.<br />

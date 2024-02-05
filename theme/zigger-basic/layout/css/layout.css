@@ -220,12 +220,25 @@ ul.tbltxt li:before {background: #cccccc;content: '';display: block;height: 2px;
 
 /* Main */
 #main {background: var(--korqar-white);}
-#main .vis {background-image: url('/data/manage/main_banner.jpeg');height: 500px;left: 50%;margin-bottom: 40px;margin-left: -50vw;margin-top: -60px;position: relative;text-align: center;width: 100vw;}
+/* #main .vis {background-image: url('/data/manage/banner1.webp');height: 500px;left: 50%;margin-bottom: 40px;margin-left: -50vw;margin-top: -60px;position: relative;text-align: center;width: 100vw;} */
+#main .vis {
+    background-image: url('/data/manage/banner1.webp');
+    background-size: 1792px 1024px; /* Set the desired width and height */
+    background-position: center center; /* Position the image at the center bottom */    
+    height: 400px;
+    left: 50%;
+    margin-bottom: 40px;
+    margin-left: -40vw;
+    margin-top: -60px;
+    position: relative;
+    text-align: center;
+    width: 80vw;
+}
 #main .vis:before {content: '';display: inline-block;height: 100%;vertical-align: middle;}
-#main .vis .in {display: inline-block;padding-bottom: 50px;position: relative;text-align: left;vertical-align: middle;padding-right: 40%;@media (max-width: 550px) {padding-right: 0;}}
-#main .vis .in h3 {color: var(--korqar-white);font-size: 45px;font-weight: bold;letter-spacing: -3px;line-height: 64px;}
-#main .vis .in p {color: var(--korqar-white);opacity: 0.7;font-size: 16px;font-weight: normal;letter-spacing: -0.05em;line-height: 26px;margin-top: 25px;}
-#main .vis .in i {color: var(--korqar-white);font-size: 55px;margin-bottom: 30px;}
+#main .vis .in {display: inline-block;padding-bottom: 0px;position: relative;text-align: left;vertical-align: middle;}
+#main .vis .in h3 {color: var(--korqar-primary);font-size: 45px;font-weight: bold;letter-spacing: -3px;line-height: 64px;}
+#main .vis .in p {color: var(--korqar-primary);opacity: 0.7;font-size: 16px;font-weight: normal;letter-spacing: -0.05em;line-height: 26px;margin-top: 25px;}
+#main .vis .in i {color: var(--korqar-primary);font-size: 55px;margin-bottom: 30px;}
 
 #main .lat-wrap {display: flex;flex-wrap: wrap;justify-content: space-between;padding: 20px 0;}
 #main .lat-wrap > * {border-bottom: 1px solid #cccccc;box-sizing: border-box;width: calc(50% - 25px);}
