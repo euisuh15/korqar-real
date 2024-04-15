@@ -22,4 +22,14 @@ With KORQAR, users gain access to a comprehensive array of features designed to 
 
 ## Acknowledgments
 
-Special thanks to Yeon Geong Hwang for creating the digital illustrations of the website. Check out her [website](https://yeongeonghwang.com/) and [LinkedIn](https://www.linkedin.com/in/yeon-geong-hwang/)
+## Acknowledgments
+
+Certainly! Here's the updated acknowledgment section with LinkedIn and website references:
+
+## Acknowledgments
+
+I'd like to thank Yeon Geong Hwang for her outstanding digital illustrations, which have added a visually stunning dimension to the website. Her talent and attention to detail have truly elevated the user experience. Explore more of Yeon Geong Hwang's remarkable work on her [website](https://yeongeonghwang.com/) and connect with her on [LinkedIn](https://www.linkedin.com/in/yeon-geong-hwang/).
+
+I also acknowledge the invaluable assistance provided by Doohee Jang during the alpha testing phase. His insightful feedback and meticulous testing have played a crucial role in refining the policies and functionalities of the platform, ensuring its smooth operation. Discover more about Doohee Jang's expertise and professional journey on his [LinkedIn](https://www.linkedin.com/in/doo-hee-j-994b23bb/).
+
+Furthermore, I express my appreciation to Gajin Chung for her contributions in improving the user interface and conducting thorough alpha testing. Her expertise and dedication have significantly enhanced the usability and appeal of the website. Delve deeper into Gajin Chung's professional endeavors and achievements on her [LinkedIn](https://www.linkedin.com/in/gajin-chung-5a76b2186/).
